@@ -1,8 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import PropTypes from 'prop-types'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const AddTodo = ({submitTodo}) => {
+	let input;
+
+return (
+	<div>
+		<form
+			onSubmit={(event) => {
+				event.preventDefault();
+				submitTodo(input.value);
+				input.value = '';
+			}}
+		>
+
+		<input
+			className="todo-input"
+			ref={(element) => {
+				input = element;
+			}}
+		/>
+
+			<button type="submit" className="todo-submit">
+			Add Todo
+			</button>
+		</form>
+	</div>
+);
+};
+
+AddTodo.PropTypes = {
+	submitTodo: PropTypes.func.isRequired,
+};
+
+export default AddTodo;
