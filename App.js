@@ -4,7 +4,7 @@ const App = () =>
 (
 	<div>
 		<h1>Todo List</h1>
-		<AddTodo />
+		<AddTodo submitTodo ={() => {}} />
 	</div>
 );
 
