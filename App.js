@@ -1,10 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import AddTodo from './components/addTodo';
+import actions from './actions/';
 
-const App = () => (
+export const App = ({submitTodo}) => (
   <div>
     <h1>Todo list</h1>
-    <AddTodo submitTodo={() => {}} />
+    <AddTodo submitTodo = {submitTodo} />
   </div>
 );
 

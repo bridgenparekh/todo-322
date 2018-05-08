@@ -1,21 +1,20 @@
 import types from '../constants/';
 
-let todoID = 0;
+let todoId = 0;
 
-const nextID = () => {
-	todoID +=1;
-	return todoId;
+const nextId = () => {
+  todoId += 1;
+  return todoId;
 };
 
-
 const actions = {
-	submitTodo(text) {
-		return {
-			type: types.SUBMIT_TODO,
-			id: nextId(),
-			text,
-		};
-	};
+  submitTodo(text) {
+    return {
+      type: types.SUBMIT_TODO,
+      id: nextId(),
+      text,
+    };
+  },
 };
 
 export default actions;
