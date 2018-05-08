@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import AddTodo from './components/addTodo/';
 import TodoList from './components/todoList';
 import actions from './actions/';
+import './App.css';
 
 export const App =({
     submitTodo,
@@ -14,7 +15,7 @@ export const App =({
     disableAddTodo,
     disableUndelete,
   }) => (
-  <div>
+  <div class ="main_body">
     <h1>Todo list</h1>
 
     <AddTodo
