@@ -11,4 +11,18 @@ export const App = ({submitTodo}) => (
   </div>
 );
 
-export default App;
+App.PropTypes = {
+	submitTodo: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => state.todoListApp;
+
+const mapDispatchToProps = dispatch => ({
+	submitTodo: (text) => {
+		if (text) {
+			dispatch(actions.submitTodo(text));
+		}
+	},
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
